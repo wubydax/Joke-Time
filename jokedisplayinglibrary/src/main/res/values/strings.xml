@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Joke Displaying Library</string>
+    <string name="nothing_to_display">Nothing to display</string>
+</resources>
