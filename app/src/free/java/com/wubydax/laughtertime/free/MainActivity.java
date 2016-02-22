@@ -6,6 +6,7 @@ import android.view.View;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.wubydax.laughtertime.FetchJoke;
 import com.wubydax.laughtertime.R;
@@ -21,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         interstitialAd = new InterstitialAd(this);
-        interstitialAd.setAdUnitId(getString(R.string.banner_ad_unit_id));
+        interstitialAd.setAdUnitId(getString(R.string.interstitial_ad_unit_id));
         interstitialAd.setAdListener(new AdListener() {
             @Override
             public void onAdClosed() {
@@ -29,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         adRequest = new AdRequest.Builder().build();
+        AdView adView = (AdView) findViewById(R.id.adView);
+        adView.loadAd(adRequest);
 
 
     }
